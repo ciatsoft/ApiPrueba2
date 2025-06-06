@@ -18,7 +18,6 @@ namespace WebApiDePrueba.App_Start
         public void Configuration(IAppBuilder app)
         {
             ConfigureOAuth(app);
-            //Rest of code is here;
         }
 
         public void ConfigureOAuth(IAppBuilder app)
