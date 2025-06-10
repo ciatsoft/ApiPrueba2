@@ -10,7 +10,7 @@ using WebApiDePrueba.Models;
 
 namespace WebApiDePrueba.Controllers
 {
-    
+
     [RoutePrefix("api/Usuario")]
     public class UsuarioController : ApiController
     {
@@ -25,20 +25,49 @@ namespace WebApiDePrueba.Controllers
         [Route("GetAllUsuario")]
         public ModelResponse GetAllUsuario()
         {
-            var respose = new ModelResponse()
-            { 
+            var response = new ModelResponse()
+            {
                 Response = wrapper.GetAllUsuario(out OperationResult result),
                 Result = result
             };
-
-            return respose;
+            return response;
         }
+
         [AllowAnonymous]
         [HttpPost]
         [Route("Autenticacion")]
-        public ObjUsuario Autenticacion(ObjUsuario request)
+        public ModelResponse Autenticacion(ObjUsuario request)
         {
-            var response = wrapper.GetUserByUserNameAndPass(request.UserName, request.Pass);
+            var response = new ModelResponse()
+            {
+                Response = wrapper.GetUserByUserNameAndPass(request.UserName, request.Pass, out OperationResult result),
+                Result = result
+            };
+            return response;
+        }
+
+
+        [HttpGet]
+        [Route("GetAllLaptop")]
+        public ModelResponse GetAllLaptop()
+        {
+            var response = new ModelResponse()
+            {
+                Response = wrapper.GetAllLaptop(out OperationResult result),
+                Result = result
+            };
+            return response;
+        }
+
+        [HttpPost]
+        [Route("AutenticacionLaptop")]
+        public ModelResponse AutenticacionLaptop(ObjLaptop request)
+        {
+            var response = new ModelResponse()
+            {
+                Response = wrapper.GetLaptopByBrand(request.Brand, out OperationResult result),
+                Result = result
+            };
             return response;
         }
     }
