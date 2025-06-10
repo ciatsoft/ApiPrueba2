@@ -11,6 +11,7 @@ using WebApiDePrueba.Models;
 namespace WebApiDePrueba.Controllers
 {
 
+    [Authorize]
     [RoutePrefix("api/Usuario")]
     public class UsuarioController : ApiController
     {
@@ -20,7 +21,6 @@ namespace WebApiDePrueba.Controllers
             wrapper = new DbWrapper();
         }
 
-        [Authorize]
         [HttpGet]
         [Route("GetAllUsuario")]
         public ModelResponse GetAllUsuario()
@@ -33,7 +33,7 @@ namespace WebApiDePrueba.Controllers
             return response;
         }
 
-        [AllowAnonymous]
+
         [HttpPost]
         [Route("Autenticacion")]
         public ModelResponse Autenticacion(ObjUsuario request)

@@ -7,12 +7,13 @@ using System.Web.Mvc;
 
 namespace MVCDePrueba.Controllers
 {
-    public class HomeController : BaseController
+    public class LaptopController : BaseController
     {
+        // GET: Laptop
         public async Task<ActionResult> Index()
         {
             var responseToke = await http.GetToken("admin", "12345");
-            var responseUsersList = await http.GetAllUsuarios(responseToke.access_token);
+            var responseLaptopsList = await http.GetAllLaptop(responseToke.access_token);
             return View();
         }
     }
