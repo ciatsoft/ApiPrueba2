@@ -9,7 +9,7 @@ using WebApiDePrueba.Models;
 
 namespace WebApiDePrueba.Controllers
 {
-    [Authorize]
+    [AllowAnonymous]
     [RoutePrefix("api/Publicaciones")]
 
     public class PublicacionesController : ApiController
@@ -19,7 +19,6 @@ namespace WebApiDePrueba.Controllers
         {
             wrapper = new DbWrapper();
         }
-
 
         [HttpGet]
         [Route("GetAllPublicaciones")]

@@ -1,5 +1,4 @@
-using MVCDePrueba.DAL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,13 +7,13 @@ using System.Web.Mvc;
 
 namespace MVCDePrueba.Controllers
 {
-    public class PublicacionesController : BaseController
+    public class LaptopController : BaseController
     {
-        // GET: Publicaciones
+        // GET: Laptop
         public async Task<ActionResult> Index()
         {
             var responseToke = await http.GetToken("admin", "12345");
-            var responsePublicaciones = await http.GetAllPublicaciones(responseToke.access_token);
+            var responseLaptopsList = await http.GetAllLaptop(responseToke.access_token);
             return View();
         }
     }
