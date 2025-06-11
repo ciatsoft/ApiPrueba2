@@ -18,6 +18,7 @@ namespace MVCDePrueba.DAL
         private string BaseUri;
         public HttpClientBase()
 		{
+
             BaseUri = ConfigurationManager.AppSettings["BaseUriWebApi"];
 
             httpClient = new HttpClient()
@@ -82,4 +83,5 @@ namespace MVCDePrueba.DAL
             }
         }
     }
+
 }

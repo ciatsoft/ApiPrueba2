@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 using WebApiDePrueba.DAL;
+using WebApiDePrueba.Models;
 
 [assembly: OwinStartup(typeof(WebApiDePrueba.App_Start.Startup))]
 namespace WebApiDePrueba.App_Start
@@ -34,33 +35,33 @@ namespace WebApiDePrueba.App_Start
             app.UseOAuthAuthorizationServer(OAuthServerOptions);
             app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
         }
-    }
 
-    public class SimpleAuthorizationServerProvider : OAuthAuthorizationServerProvider
-    {
-        public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
+        public class SimpleAuthorizationServerProvider : OAuthAuthorizationServerProvider
         {
-            context.Validated();
-        }
-
-        public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
-        {
-
-            context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
-
-            var response = new DbWrapper().GetUserByUserNameAndPass(context.UserName, context.Password);
-            if (response == null)
+            public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
             {
-                context.SetError("invalid_grant", "The user name or password is incorrect.");
-                return;
+                context.Validated();
             }
 
-            var identity = new ClaimsIdentity(context.Options.AuthenticationType);
-            identity.AddClaim(new Claim("sub", context.UserName));
-            identity.AddClaim(new Claim("role", "user"));
+            public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
+            {
 
-            context.Validated(identity);
+                context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
 
+                var response = new DbWrapper().GetUserByUserNameAndPass(context.UserName, context.Password, out OperationResult result);
+                if (response == null)
+                {
+                    context.SetError("invalid_grant", "The user name or password is incorrect.");
+                    return;
+                }
+
+                var identity = new ClaimsIdentity(context.Options.AuthenticationType);
+                identity.AddClaim(new Claim("sub", context.UserName));
+                identity.AddClaim(new Claim("role", "user"));
+
+                context.Validated(identity);
+
+            }
         }
     }
 }
