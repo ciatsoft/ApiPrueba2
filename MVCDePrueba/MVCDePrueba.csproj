@@ -94,6 +94,7 @@
   <ItemGroup>
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\Home\Autenticacion.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -108,7 +109,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\SesisonHelpers.cs" />
+    <Compile Include="Helpers\SessionHelper.cs" />
     <Compile Include="Models\Autenticacion\ObjUsuario.cs" />
     <Compile Include="Models\Autenticacion\Token.cs" />
     <Compile Include="Models\Autenticacion\TokenCookie.cs" />
@@ -123,6 +124,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Publicaciones\Index.cshtml" />
+    <Content Include="Views\Home\Autenticacion.cshtml" />
+    <Content Include="Views\Shared\_Autenticacion.cshtml" />
+
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

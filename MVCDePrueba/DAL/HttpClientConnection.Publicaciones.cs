@@ -1,4 +1,4 @@
-﻿using MVCDePrueba.Models;
+using MVCDePrueba.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -9,8 +9,8 @@ using System.Web;
 
 namespace MVCDePrueba.DAL
 {
-    public partial class HttpClientConnection
-    {
+	public partial class HttpClientConnection
+	{
         public async Task<ModelResponse> GetAllPublicaciones(string token)
         {
             var result = await RequestAsync($"api/Publicaciones/GetAllPublicaciones", HttpMethod.Get, null,

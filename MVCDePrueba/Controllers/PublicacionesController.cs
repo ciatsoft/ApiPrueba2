@@ -1,4 +1,4 @@
-﻿using MVCDePrueba.DAL;
+using MVCDePrueba.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ namespace MVCDePrueba.Controllers
         public async Task<ActionResult> Index()
         {
             var responseToke = await http.GetToken("admin", "12345");
-            var responseUsersList = await new HttpClientConnection().GetAllUsuarios(responseToke.access_token);
+            var responsePublicaciones = await http.GetAllPublicaciones(responseToke.access_token);
             return View();
         }
     }
