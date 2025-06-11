@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Autenticación";
+    Layout = "~/Views/Shared/_Autenticacion.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-6">
+        <label>Usuario:</label>
+        <input type="text" id="txtUserName" value="" class="form-control" />
+    </div>
+    <div class="col-lg-6">
+        <label>Password:</label>
+        <input type="password" id="txtPass" value="" class="form-control" />
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <input type="button" id="btnAutenticar" class="btn btn-success" value="Autenticación" />
+    </div>
+</div>
+<script src="~/Scripts/Home/Autenticacion.js"></script>
