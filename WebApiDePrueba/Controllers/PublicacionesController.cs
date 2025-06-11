@@ -9,7 +9,7 @@ using WebApiDePrueba.Models;
 
 namespace WebApiDePrueba.Controllers
 {
-    [AllowAnonymous]
+    [Authorize]
     [RoutePrefix("api/Publicaciones")]
 
     public class PublicacionesController : ApiController
