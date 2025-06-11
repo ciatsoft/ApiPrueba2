@@ -1,4 +1,4 @@
-﻿using MVCDePrueba.DAL;
+using MVCDePrueba.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;

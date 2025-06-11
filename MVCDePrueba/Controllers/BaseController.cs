@@ -1,4 +1,5 @@
-﻿using MVCDePrueba.DAL;
+using MVCDePrueba.DAL;
+using MVCDePrueba.DAL;
 using MVCDePrueba.Models;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,6 @@ namespace MVCDePrueba.Controllers
 {
     public class BaseController : Controller
     {
-        // GET: Base
         public HttpClientConnection http { get; set; }
         public ModelResponse mr { get; set; }
         public BaseController()
