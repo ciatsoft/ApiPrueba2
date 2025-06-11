@@ -7,8 +7,8 @@ using System.Web;
 
 namespace WebApiDePrueba.DAL
 {
-    public partial class DbWrapper : BaseDbWrapper
-    {
+	public partial class DbWrapper : BaseDbWrapper
+	{
         protected override string SQLConnectionString { get; }
         protected override TimeSpan SQLCommandTimeOut { get; }
 
