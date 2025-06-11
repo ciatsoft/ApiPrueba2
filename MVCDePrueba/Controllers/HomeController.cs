@@ -9,6 +9,10 @@ namespace MVCDePrueba.Controllers
 {
     public class HomeController : BaseController
     {
+        public async Task<ActionResult> Autenticacion()
+        {
+            return View();
+        }
         public async Task<ActionResult> Index()
         {
             var responseToke = await http.GetToken("admin", "12345");
