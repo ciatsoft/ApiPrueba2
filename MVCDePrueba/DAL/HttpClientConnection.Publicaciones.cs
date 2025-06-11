@@ -1,5 +1,4 @@
-﻿using MVCDePrueba.Models;
-using MVCDePrueba.Models.Autenticacion;
+using MVCDePrueba.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -10,13 +9,11 @@ using System.Web;
 
 namespace MVCDePrueba.DAL
 {
-
 	public partial class HttpClientConnection
 	{
-
-        public async Task<ModelResponse> GetAllUsuarios(string token)
+        public async Task<ModelResponse> GetAllPublicaciones(string token)
         {
-            var result = await RequestAsync($"api/Usuario/GetAllUsuario", HttpMethod.Get, null,
+            var result = await RequestAsync($"api/Publicaciones/GetAllPublicaciones", HttpMethod.Get, null,
                 new Func<string, string>((responseString) =>
                 {
                     return responseString;

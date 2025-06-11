@@ -1,4 +1,4 @@
-﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -137,16 +137,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\PublicacionesController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="DAL\BaseDbWrapper.cs" />
     <Compile Include="DAL\DbWrapper.cs" />
+
+    <Compile Include="DAL\DbWrapper.Publicaciones.cs" />
+
     <Compile Include="DAL\DbWrapper.Laptop.cs" />
+
     <Compile Include="DAL\DbWrapper.Usuario.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\BaseObject.cs" />
     <Compile Include="Models\ModelResponse.cs" />
+
+    <Compile Include="Models\ObjPublicaciones.cs" />
+
     <Compile Include="Models\ObjLaptop.cs" />
     <Compile Include="Models\ObjUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
