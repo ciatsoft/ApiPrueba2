@@ -8,11 +8,12 @@ using System.Web.Mvc;
 
 namespace MVCDePrueba.Controllers
 {
-    public class HomeController : BaseController
+    public class PublicacionesController : BaseController
     {
+        // GET: Publicaciones
         public async Task<ActionResult> Index()
         {
-            var responseToke = await new HttpClientConnection().GetToken("admin", "12345");
+            var responseToke = await http.GetToken("admin", "12345");
             var responseUsersList = await new HttpClientConnection().GetAllUsuarios(responseToke.access_token);
             return View();
         }
