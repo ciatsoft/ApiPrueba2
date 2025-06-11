@@ -57,6 +57,7 @@ namespace MVCDePrueba.Controllers
             }
 
             return JsonConvert.SerializeObject(mr);
+
         }
     }
 }

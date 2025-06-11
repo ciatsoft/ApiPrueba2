@@ -1,3 +1,4 @@
+
 ﻿using MVCDePrueba.Models.Autenticacion;
 using Newtonsoft.Json;
 using System;
@@ -41,4 +42,5 @@ namespace MVCDePrueba.Helpers
             return u;
         }
 	}
+
 }
