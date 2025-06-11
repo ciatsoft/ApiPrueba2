@@ -10,7 +10,7 @@ using WebApiDePrueba.Models;
 
 namespace WebApiDePrueba.Controllers
 {
-    [AllowAnonymous]
+    [Authorize]
     [RoutePrefix("api/Producto")]
     public class ProductoController : ApiController
     {
