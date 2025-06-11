@@ -7,12 +7,10 @@ namespace MVCDePrueba.Models
 {
     public class ModelResponse
     {
-
         public ModelResponse()
         {
             Result = new OperationResult();
         }
-
         public object Response { get; set; }
         public OperationResult Result { get; set; }
     }

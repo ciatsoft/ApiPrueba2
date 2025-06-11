@@ -20,6 +20,7 @@ namespace WebApiDePrueba.Controllers
             wrapper = new DbWrapper();
         }
 
+
         [HttpGet]
         [Route("GetAllPublicaciones")]
         public ModelResponse GetAllPublicaciones()
