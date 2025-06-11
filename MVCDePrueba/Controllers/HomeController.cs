@@ -1,23 +1,40 @@
 ﻿using MVCDePrueba.DAL;
+using MVCDePrueba.Models.Autenticacion;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 
 namespace MVCDePrueba.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Autenticacion()
         {
-            var responseToke = await new HttpClientConnection().GetToken("admin", "12345");
-            var responseUsersList = await new HttpClientConnection().GetAllUsuarios(responseToke.access_token);
+            //var responseToke = await http.GetToken("admin", "12345");
+            //responseToke.ExpirationDate = DateTime.Now.AddSeconds(responseToke.expires_in);
+            //
+            //var responseUsersList = await http.GetAllUsuarios(responseToke.access_token);
+            //
+            //Helpers.SessionHelper.CreateDession(new Models.Autenticacion.TokenCookie()
+            //{ 
+            //    token = responseToke,
+            //    userName = "admin"
+            //});
+
             return View();
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
+        public async Task<ActionResult> Index()
+        {
+            var usuarioAutenticado = Helpers.SessionHelper.GetSession();
+
+            ViewBag.UsuarioAutenticado = usuarioAutenticado.userName;
+            return View();
+        }
         [HttpPost]
         public async Task<string> AutenticacionDeUsuario(ObjUsuario u)
         {
@@ -40,11 +57,6 @@ namespace MVCDePrueba.Controllers
             }
 
             return JsonConvert.SerializeObject(mr);
-
         }
-=======
->>>>>>> parent of 78dfde0 (Merge pull request #7 from ciatsoft/feature/RamaTrabajoIvan)
-=======
->>>>>>> parent of 78dfde0 (Merge pull request #7 from ciatsoft/feature/RamaTrabajoIvan)
     }
 }

@@ -10,8 +10,7 @@ using WebApiDePrueba.Models;
 
 namespace WebApiDePrueba.Controllers
 {
-
-    [Authorize]
+    
     [RoutePrefix("api/Usuario")]
     public class UsuarioController : ApiController
     {
@@ -21,53 +20,25 @@ namespace WebApiDePrueba.Controllers
             wrapper = new DbWrapper();
         }
 
+        [Authorize]
         [HttpGet]
         [Route("GetAllUsuario")]
         public ModelResponse GetAllUsuario()
         {
-            var response = new ModelResponse()
-            {
+            var respose = new ModelResponse()
+            { 
                 Response = wrapper.GetAllUsuario(out OperationResult result),
                 Result = result
             };
-            return response;
+
+            return respose;
         }
-
-
+        [AllowAnonymous]
         [HttpPost]
         [Route("Autenticacion")]
-        public ModelResponse Autenticacion(ObjUsuario request)
+        public ObjUsuario Autenticacion(ObjUsuario request)
         {
-            var response = new ModelResponse()
-            {
-                Response = wrapper.GetUserByUserNameAndPass(request.UserName, request.Pass, out OperationResult result),
-                Result = result
-            };
-            return response;
-        }
-
-
-        [HttpGet]
-        [Route("GetAllLaptop")]
-        public ModelResponse GetAllLaptop()
-        {
-            var response = new ModelResponse()
-            {
-                Response = wrapper.GetAllLaptop(out OperationResult result),
-                Result = result
-            };
-            return response;
-        }
-
-        [HttpPost]
-        [Route("AutenticacionLaptop")]
-        public ModelResponse AutenticacionLaptop(ObjLaptop request)
-        {
-            var response = new ModelResponse()
-            {
-                Response = wrapper.GetLaptopByBrand(request.Brand, out OperationResult result),
-                Result = result
-            };
+            var response = wrapper.GetUserByUserNameAndPass(request.UserName, request.Pass);
             return response;
         }
     }
