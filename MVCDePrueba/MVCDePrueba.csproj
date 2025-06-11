@@ -126,6 +126,7 @@
     <Content Include="Views\Publicaciones\Index.cshtml" />
     <Content Include="Views\Home\Autenticacion.cshtml" />
     <Content Include="Views\Shared\_Autenticacion.cshtml" />
+
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

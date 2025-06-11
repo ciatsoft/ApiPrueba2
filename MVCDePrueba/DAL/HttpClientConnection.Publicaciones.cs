@@ -1,4 +1,4 @@
-﻿using MVCDePrueba.Models;
+using MVCDePrueba.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
