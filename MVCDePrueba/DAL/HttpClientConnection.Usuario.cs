@@ -10,10 +10,8 @@ using System.Web;
 
 namespace MVCDePrueba.DAL
 {
-
 	public partial class HttpClientConnection
 	{
-
         public async Task<ModelResponse> GetAllUsuarios(string token)
         {
             var result = await RequestAsync($"api/Usuario/GetAllUsuario", HttpMethod.Get, null,
