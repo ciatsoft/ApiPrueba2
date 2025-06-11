@@ -17,6 +17,7 @@ namespace MVCDePrueba.Controllers
             return View();
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
         [HttpPost]
         public async Task<string> AutenticacionDeUsuario(ObjUsuario u)
         {
@@ -41,6 +42,8 @@ namespace MVCDePrueba.Controllers
             return JsonConvert.SerializeObject(mr);
 
         }
+=======
+>>>>>>> parent of 78dfde0 (Merge pull request #7 from ciatsoft/feature/RamaTrabajoIvan)
 =======
 >>>>>>> parent of 78dfde0 (Merge pull request #7 from ciatsoft/feature/RamaTrabajoIvan)
     }

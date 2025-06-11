@@ -8,12 +8,15 @@ namespace MVCDePrueba.Models
     public class ModelResponse
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         public ModelResponse()
         {
             Result = new OperationResult();
         }
 
+=======
+>>>>>>> parent of 78dfde0 (Merge pull request #7 from ciatsoft/feature/RamaTrabajoIvan)
 =======
 >>>>>>> parent of 78dfde0 (Merge pull request #7 from ciatsoft/feature/RamaTrabajoIvan)
         public object Response { get; set; }
