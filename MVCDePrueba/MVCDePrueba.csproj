@@ -103,9 +103,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LaptopController.cs" />
     <Compile Include="Controllers\PublicacionesController.cs" />
     <Compile Include="DAL\HttpClientBase.cs" />
     <Compile Include="DAL\HttpClientConnection.cs" />
+    <Compile Include="DAL\HttpClientConnection.Laptop.cs" />
     <Compile Include="DAL\HttpClientConnection.Publicaciones.cs" />
     <Compile Include="DAL\HttpClientConnection.Usuario.cs" />
     <Compile Include="Global.asax.cs">
@@ -113,6 +115,7 @@
     </Compile>
     <Compile Include="Helpers\FiltersHelpers.cs" />
     <Compile Include="Helpers\SessionHelper.cs" />
+    <Compile Include="Models\Autenticacion\ObjLaptop.cs" />
     <Compile Include="Models\Autenticacion\ObjUsuario.cs" />
     <Compile Include="Models\Autenticacion\Token.cs" />
     <Compile Include="Models\Autenticacion\TokenCookie.cs" />
@@ -139,6 +142,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Base\" />
+    <Folder Include="Views\Laptop\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
