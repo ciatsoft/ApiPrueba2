@@ -1,48 +1,49 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.EnterpriseServices;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using System.Web.Routing;
 using WebApiDePrueba.DAL;
 using WebApiDePrueba.Models;
 
 namespace WebApiDePrueba.Controllers
 {
-
-    [RoutePrefix("api/Usuario")]
-    public class UsuarioController : ApiController
+    [Authorize]
+    [RoutePrefix("api/Producto")]
+    public class ProductoController : ApiController
     {
         private DbWrapper wrapper;
-        public UsuarioController()
+        public ProductoController()
         {
             wrapper = new DbWrapper();
+            
         }
 
-        [Authorize]
         [HttpGet]
-        [Route("GetAllUsuario")]
-        public ModelResponse GetAllUsuario()
+        [Route("GetAllProductos")]
+        public ModelResponse GetAllProductos()
         {
             var response = new ModelResponse()
             {
-                Response = wrapper.GetAllUsuario(out OperationResult result),
+                Response = wrapper.GetAllProductos(out OperationResult result),
                 Result = result
             };
 
             return response;
+
         }
-        [AllowAnonymous]
         [HttpPost]
-        [Route("Autenticacion")]
-        public ModelResponse Autenticacion(ObjUsuario request)
+        [Route("GetProductosForId")]
+        public ModelResponse GetProductosForId(ObjProducto request)
         {
             var response = new ModelResponse()
             {
-                Response = wrapper.GetUserByUserNameAndPass(request.UserName, request.Pass, out OperationResult result),
+                Response = wrapper.GetProductosForId(request.Id, out OperationResult result),
                 Result = result
             };
+
             return response;
         }
     }

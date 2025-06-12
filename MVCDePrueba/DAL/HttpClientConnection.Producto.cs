@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
@@ -13,9 +12,9 @@ namespace MVCDePrueba.DAL
 {
     public partial class HttpClientConnection
     {
-        public async Task<ModelResponse> GetAllUsuarios(string token)
+        public async Task<ModelResponse> GetAllProductos(string token)
         {
-            var result = await RequestAsync($"api/Usuario/GetAllUsuario", HttpMethod.Get, null,
+            var result = await RequestAsync($"api/Producto/GetAllProductos", HttpMethod.Get, null,
                 new Func<string, string>((responseString) =>
                 {
                     return responseString;
@@ -26,11 +25,11 @@ namespace MVCDePrueba.DAL
             return modelResponse;
         }
 
-        public async Task<ModelResponse> Autenticacion(string token, ObjUsuario credentials)
+        public async Task<ModelResponse> AutenticacionLaptop(string token, ObjUsuario credentials)
         {
             var requestBodyJson = JsonConvert.SerializeObject(credentials);
 
-            var result = await RequestAsync<string>($"api/Usuario/Autenticacion", HttpMethod.Post, requestBodyJson,
+            var result = await RequestAsync<string>($"api/Producto/GetProductosForId", HttpMethod.Post, requestBodyJson,
                 new Func<string, string>((responseString) =>
                 {
                     return responseString;
@@ -41,4 +40,6 @@ namespace MVCDePrueba.DAL
             return modelResponse;
         }
     }
+
+
 }
