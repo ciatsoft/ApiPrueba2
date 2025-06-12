@@ -14,7 +14,7 @@ namespace MVCDePrueba.Controllers
         public async Task<ActionResult> Index()
         {
             var responseToke = await http.GetToken("admin", "12345");
-            var responsePublicaciones = await http.GetAllPublicaciones(responseToke.access_token);
+            var responsePublicaciones = await http.GetAllPublicaciones();
             return View();
         }
     }

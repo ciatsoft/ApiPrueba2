@@ -1,4 +1,5 @@
-﻿using MVCDePrueba.Models.Autenticacion;
+﻿using MVCDePrueba.Helpers;
+using MVCDePrueba.Models.Autenticacion;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,11 @@ namespace MVCDePrueba.DAL
 {
     public partial class HttpClientConnection : HttpClientBase
 	{
+        public TokenCookie tokenCookie { get; set; }
+        public HttpClientConnection()
+        {
+            tokenCookie = SessionHelper.GetSession();
+        }
         public async Task<Token> GetToken(string user, string pass)
         {
             return await TokenAsync<Token>("token",
