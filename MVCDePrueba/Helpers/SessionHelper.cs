@@ -40,5 +40,30 @@ namespace MVCDePrueba.Helpers
 
             return u;
         }
-	}
+
+        public static bool EixstSession()
+        {
+            var token = GetSession();
+            //if (token != null && token.Token != null && token.Token.ExpirationDate <= DateTime.Now)
+            if (token == null)
+            {
+                return false;
+            }
+            else
+            {
+                if (token.token == null)
+                    return false;
+                else
+                {
+                    if (token.token.ExpirationDate >= DateTime.Now)
+                        return true;
+                    else
+                        return false;
+                }
+
+            }
+
+
+        }
+    }
 }
