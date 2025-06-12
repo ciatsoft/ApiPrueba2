@@ -1,4 +1,4 @@
-using MVCDePrueba.DAL;
+﻿using MVCDePrueba.DAL;
 using MVCDePrueba.Models.Autenticacion;
 using Newtonsoft.Json;
 using System;
@@ -23,9 +23,6 @@ namespace MVCDePrueba.Controllers
         [Autenticated]
         public ActionResult Index()
         {
-            var usuarioAutenticado = Helpers.SessionHelper.GetSession();
-
-            ViewBag.UsuarioAutenticado = usuarioAutenticado.userName;
             return View();
         }
         #endregion
