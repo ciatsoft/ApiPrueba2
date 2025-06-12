@@ -10,7 +10,7 @@ using WebApiDePrueba.Models;
 
 namespace WebApiDePrueba.Controllers
 {
-
+    
     [RoutePrefix("api/Usuario")]
     public class UsuarioController : ApiController
     {
@@ -25,24 +25,20 @@ namespace WebApiDePrueba.Controllers
         [Route("GetAllUsuario")]
         public ModelResponse GetAllUsuario()
         {
-            var response = new ModelResponse()
-            {
+            var respose = new ModelResponse()
+            { 
                 Response = wrapper.GetAllUsuario(out OperationResult result),
                 Result = result
             };
 
-            return response;
+            return respose;
         }
         [AllowAnonymous]
         [HttpPost]
         [Route("Autenticacion")]
-        public ModelResponse Autenticacion(ObjUsuario request)
+        public ObjUsuario Autenticacion(ObjUsuario request)
         {
-            var response = new ModelResponse()
-            {
-                Response = wrapper.GetUserByUserNameAndPass(request.UserName, request.Pass, out OperationResult result),
-                Result = result
-            };
+            var response = wrapper.GetUserByUserNameAndPass(request.UserName, request.Pass);
             return response;
         }
     }

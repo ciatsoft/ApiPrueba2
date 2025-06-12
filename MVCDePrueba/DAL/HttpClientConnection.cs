@@ -1,10 +1,12 @@
 ﻿using MVCDePrueba.Helpers;
 using MVCDePrueba.Models.Autenticacion;
 using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
+
 namespace MVCDePrueba.DAL
 {
     public partial class HttpClientConnection : HttpClientBase

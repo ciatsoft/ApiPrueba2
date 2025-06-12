@@ -12,12 +12,12 @@ using System.Web;
 
 namespace MVCDePrueba.DAL
 {
-    public class HttpClientBase
-    {
+	public class HttpClientBase
+	{
         private HttpClient httpClient;
         private string BaseUri;
         public HttpClientBase()
-        {
+		{
             BaseUri = ConfigurationManager.AppSettings["BaseUriWebApi"];
 
             httpClient = new HttpClient()
@@ -82,5 +82,4 @@ namespace MVCDePrueba.DAL
             }
         }
     }
-
 }

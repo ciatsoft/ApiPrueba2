@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 using WebApiDePrueba.DAL;
-using WebApiDePrueba.Models;
 
 [assembly: OwinStartup(typeof(WebApiDePrueba.App_Start.Startup))]
 namespace WebApiDePrueba.App_Start
@@ -49,7 +48,7 @@ namespace WebApiDePrueba.App_Start
 
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
 
-            var response = new DbWrapper().GetUserByUserNameAndPass(context.UserName, context.Password, out OperationResult result);
+            var response = new DbWrapper().GetUserByUserNameAndPass(context.UserName, context.Password);
             if (response == null)
             {
                 context.SetError("invalid_grant", "The user name or password is incorrect.");
@@ -67,3 +66,4 @@ namespace WebApiDePrueba.App_Start
 }
 
 //comentarios
+//edrtfygbuhnijmok
