@@ -32,7 +32,7 @@ namespace MVCDePrueba.Controllers
         {
             var usuarioAutenticado = Helpers.SessionHelper.GetSession();
 
-            ViewBag.UsuarioAutenticado = usuarioAutenticado.userName;
+            //ViewBag.UsuarioAutenticado = usuarioAutenticado.userName;
             return View();
         }
         [HttpPost]
