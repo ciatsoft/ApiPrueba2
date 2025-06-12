@@ -11,13 +11,13 @@ namespace MVCDePrueba.DAL
 {
 	public partial class HttpClientConnection
 	{
-        public async Task<ModelResponse> GetAllPublicaciones(string token)
+        public async Task<ModelResponse> GetAllPublicaciones()
         {
             var result = await RequestAsync($"api/Publicaciones/GetAllPublicaciones", HttpMethod.Get, null,
                 new Func<string, string>((responseString) =>
                 {
                     return responseString;
-                }), token);
+                }), tokenCookie.token.access_token);
 
             var modelResponse = JsonConvert.DeserializeObject<ModelResponse>(result);
 
