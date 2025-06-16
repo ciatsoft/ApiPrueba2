@@ -31,9 +31,65 @@ namespace WebApiDePrueba.DAL
             {
                 result.Success = false;
                 result.ErrorMessage = ex.Message;
-                throw;
             }
             return response.ToList();
+        }
+        public ObjPublicaciones GetPublicacionesForId(int id,out OperationResult result)
+        {
+            result = new OperationResult()
+            {
+                Success = true
+            };
+            ObjPublicaciones response = new ObjPublicaciones();
+            var parametros = new List<SqlParameter>()
+            { 
+                new SqlParameter()
+                {
+                    ParameterName = "@Id",
+                    Value = id
+                }
+            };
+            try
+            {
+                response = GetObject<ObjPublicaciones>("GetPublicacionesForId", System.Data.CommandType.StoredProcedure, parametros,
+                    new Func<System.Data.IDataReader, ObjPublicaciones>(r =>
+                    {
+                        var publicaciones = FillEntity<ObjPublicaciones>(r);
+
+                        return publicaciones;
+                    }));
+            }
+            catch (Exception ex)
+            {
+                result.Success = false;
+                result.ErrorMessage = ex.Message;
+            }
+            return response;
+        }
+        public ObjPublicaciones SaveOrUpdatePublicaciones(ObjPublicaciones obj, out OperationResult result)
+        {
+            result = new OperationResult()
+            {
+                Success = true
+            };
+            ObjPublicaciones response = new ObjPublicaciones();
+            var parametros = GenerateSQLParameters(obj);
+            try
+            {
+                response = GetObject<ObjPublicaciones>("SaveOrUpdatePublicaciones", System.Data.CommandType.StoredProcedure, parametros,
+                    new Func<System.Data.IDataReader, ObjPublicaciones>(r =>
+                    {
+                        var publicaciones = FillEntity<ObjPublicaciones>(r);
+
+                        return publicaciones;
+                    }));
+            }
+            catch (Exception ex)
+            {
+                result.Success = false;
+                result.ErrorMessage = ex.Message;
+            }
+            return response;
         }
         public ObjPublicaciones GetAllPublicacionesForId(int Id, out OperationResult result)
         {
