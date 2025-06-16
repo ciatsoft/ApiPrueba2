@@ -22,12 +22,34 @@ namespace WebApiDePrueba.Controllers
 
 
         [HttpGet]
-        [Route("GetAllPublicaciones")]
+        [Route("List")]
         public ModelResponse GetAllPublicaciones()
         {
             var response = new ModelResponse()
             {
                 Response = wrapper.GetAllPublicaciones(out OperationResult result),
+                Result = result
+            };
+            return response;
+        }
+        [HttpGet]
+        [Route("{id:int}")]
+        public ModelResponse GetPublicacionesForId(int id)
+        {
+            var response = new ModelResponse()
+            {
+                Response = wrapper.GetPublicacionesForId(id, out OperationResult result),
+                Result = result
+            };
+            return response;
+        }
+        [HttpPost]
+        [Route("")]
+        public ModelResponse SaveOrUpdatePublicaciones(ObjPublicaciones obj)
+        {
+            var response = new ModelResponse()
+            {
+                Response = wrapper.SaveOrUpdatePublicaciones(obj, out OperationResult result),
                 Result = result
             };
             return response;

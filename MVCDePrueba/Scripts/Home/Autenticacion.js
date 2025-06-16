@@ -1,4 +1,4 @@
-        
+
 $(document).ready(function () {
 
     $("#btnAutenticar").on("click", function () {
