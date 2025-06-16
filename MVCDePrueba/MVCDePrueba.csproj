@@ -101,11 +101,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AutomovilController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LaptopController.cs" />
     <Compile Include="Controllers\PublicacionesController.cs" />
     <Compile Include="DAL\HttpClientBase.cs" />
+    <Compile Include="DAL\HttpClientConnection.Automovil.cs" />
     <Compile Include="DAL\HttpClientConnection.cs" />
     <Compile Include="DAL\HttpClientConnection.Laptop.cs" />
     <Compile Include="DAL\HttpClientConnection.Publicaciones.cs" />
@@ -121,6 +123,8 @@
     <Compile Include="Models\Autenticacion\TokenCookie.cs" />
     <Compile Include="Models\BaseObject.cs" />
     <Compile Include="Models\ModelResponse.cs" />
+    <Compile Include="Models\ObjAutomovil.cs" />
+    <Compile Include="Models\ObjLaptop.cs" />
     <Compile Include="Models\ObjPublicaciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -134,6 +138,8 @@
     <Content Include="Views\Home\Autenticacion.cshtml" />
     <Content Include="Views\Shared\_Autenticacion.cshtml" />
     <Content Include="Views\Publicaciones\Crud.cshtml" />
+    <Content Include="Views\Automovil\Crud.cshtml" />
+    <Content Include="Views\Automovil\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

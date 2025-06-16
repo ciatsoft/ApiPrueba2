@@ -26,7 +26,8 @@ namespace MVCDePrueba.Controllers
             return View();
         }
         #endregion
-        
+
+
         #region Acceso a Datos
         [HttpPost]
         public async Task<string> AutenticacionDeUsuario(ObjUsuario u)
@@ -51,10 +52,16 @@ namespace MVCDePrueba.Controllers
 
             return JsonConvert.SerializeObject(mr);
         }
-        
+
         public async Task<string> GetAllPublicacionces()
         {
             var response = await http.GetAllPublicaciones();
+            return JsonConvert.SerializeObject(response);
+        }
+
+        public async Task<string> GetAllAutomovil()
+        {
+            var response = await http.GetAllAutomovil();
             return JsonConvert.SerializeObject(response);
         }
 

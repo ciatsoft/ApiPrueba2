@@ -120,10 +120,10 @@ function formatEmail(email) {
 }
 
 function MapingPropertiesDataTable(nameTable, array) {
-    $('#' + nameTable).DataTable().fnClearTable();
-    if (array.length !== 0) {
-        $('#' + nameTable).DataTable().fnAddData(array);
-    }
+    const table = $('#' + nameTable).DataTable(); 
+    table.clear();                                
+    table.rows.add(array);                       
+    table.draw();                               
 }
 
 

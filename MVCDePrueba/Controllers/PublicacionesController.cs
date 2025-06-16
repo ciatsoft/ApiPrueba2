@@ -41,7 +41,7 @@ namespace MVCDePrueba.Controllers
         public async Task<ActionResult> SaveOrUpdatePublicaciones(ObjPublicaciones obj)
         {
             await http.SaveOrUpdatePublicaciones(obj);
-            return Redirect("Crud");
+            return Redirect("../Home/Index");
         }
     }
 }
