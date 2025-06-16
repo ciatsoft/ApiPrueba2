@@ -1,0 +1,49 @@
+﻿@model MVCDePrueba.Models.ObjAutomovil
+@{
+    ViewBag.Title = "Crud";
+}
+
+
+@using (Html.BeginForm("SaveOrUpdateAutomovil", "Automovil", FormMethod.Post, new { enctype = "multipart/form-data", @name = "frmAutomovilCrud", @id = "frmAutomovilCrud" }))
+{
+    @Html.HiddenFor(x => x.Id)
+    @Html.HiddenFor(x => x.CreatedDt)
+    @Html.HiddenFor(x => x.CreatedBy)
+    @Html.HiddenFor(x => x.UpdatedBy)
+    @Html.HiddenFor(x => x.UpdatedDt)
+    <div class="row">
+        <div class="col-md-4">
+            <label>Marca:</label>
+            @Html.TextBoxFor(x => x.Marca, new { @class = "form-control" })
+        </div>
+        <div class="col-md-4">
+            <label>Modelo:</label>
+            @Html.TextBoxFor(x => x.Modelo, new { @class = "form-control" })
+        </div>
+        <div class="col-md-4">
+            <label>Año:</label>
+            @Html.TextBoxFor(x => x.Anio, new { @class = "form-control", type = "number" })
+        </div>
+        <div class="col-md-4">
+            <label>Color:</label>
+            @Html.TextBoxFor(x => x.Color, new { @class = "form-control" })
+        </div>
+        <div class="col-md-4">
+            <label>Precio:</label>
+            @Html.TextBoxFor(x => x.Precio, new { @class = "form-control", type = "number" })
+        </div>
+        <div class="col-md-4">
+            <label>Condición:</label>
+            @Html.TextBoxFor(x => x.Condicion, new { @class = "form-control" })
+        </div>
+        <div class="col-md-4">
+            <label>Tipo de Combustible:</label>
+            @Html.TextBoxFor(x => x.TCombustible, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <input type="submit" value="Guardar" class="btn btn-success" />
+        </div>
+    </div>
+}

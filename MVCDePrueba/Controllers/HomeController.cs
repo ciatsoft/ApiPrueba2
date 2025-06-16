@@ -57,6 +57,12 @@ namespace MVCDePrueba.Controllers
             var response = await http.GetAllPublicaciones();
             return JsonConvert.SerializeObject(response);
         }
+
+        public async Task<string> GetAllAutomovil()
+        {
+            var response = await http.GetAllAutomovil();
+            return JsonConvert.SerializeObject(response);
+        }
         #endregion
     }
 }

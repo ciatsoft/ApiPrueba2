@@ -1,7 +1,7 @@
 var seconds = 0;
 
 function GetMVC(url, callBackResult) {
-    
+
     $.ajax({
         url: url,
         cache: false,
@@ -18,7 +18,7 @@ function GetMVC(url, callBackResult) {
 }
 
 function GetParamMVC(url, parameters, callBackResult) {
-    
+
     $.ajax({
         url: url,
         cache: false,
@@ -35,7 +35,7 @@ function GetParamMVC(url, parameters, callBackResult) {
 }
 
 function PostMVC(url, parameters, callBackResult) {
-    
+
     $.ajax({
         url: url,
         cache: false,
@@ -52,7 +52,7 @@ function PostMVC(url, parameters, callBackResult) {
 }
 
 function PostFileMVC(url, parameters, callBackResult) {
-    
+
 
     var formData = new FormData();
     $.each(parameters, function (i, v) {
@@ -120,10 +120,8 @@ function formatEmail(email) {
 }
 
 function MapingPropertiesDataTable(nameTable, array) {
-    $('#' + nameTable).DataTable().fnClearTable();
-    if (array.length !== 0) {
-        $('#' + nameTable).DataTable().fnAddData(array);
-    }
+    const table = $('#' + nameTable).DataTable();
+    table.clear();
+    table.rows.add(array);
+    table.draw();
 }
-
-

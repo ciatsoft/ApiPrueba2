@@ -137,9 +137,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AutomovilController.cs" />
     <Compile Include="Controllers\PublicacionesController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="DAL\BaseDbWrapper.cs" />
+    <Compile Include="DAL\DbWrapper.Automovil.cs" />
     <Compile Include="DAL\DbWrapper.cs" />
     <Compile Include="DAL\DbWrapper.Publicaciones.cs" />
     <Compile Include="DAL\DbWrapper.Usuario.cs" />
@@ -148,6 +150,7 @@
     </Compile>
     <Compile Include="Models\BaseObject.cs" />
     <Compile Include="Models\ModelResponse.cs" />
+    <Compile Include="Models\ObjAutomovil.cs" />
     <Compile Include="Models\ObjPublicaciones.cs" />
     <Compile Include="Models\ObjUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

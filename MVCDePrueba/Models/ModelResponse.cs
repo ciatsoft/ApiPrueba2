@@ -13,6 +13,8 @@ namespace MVCDePrueba.Models
         }
         public object Response { get; set; }
         public OperationResult Result { get; set; }
+        public bool Success { get; internal set; }
+        public string Message { get; internal set; }
     }
     public class OperationResult
     {
