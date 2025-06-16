@@ -121,6 +121,7 @@
     <Compile Include="Models\Autenticacion\TokenCookie.cs" />
     <Compile Include="Models\BaseObject.cs" />
     <Compile Include="Models\ModelResponse.cs" />
+    <Compile Include="Models\ObjPublicaciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -132,6 +133,7 @@
     <Content Include="Views\Publicaciones\Index.cshtml" />
     <Content Include="Views\Home\Autenticacion.cshtml" />
     <Content Include="Views\Shared\_Autenticacion.cshtml" />
+    <Content Include="Views\Publicaciones\Crud.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
