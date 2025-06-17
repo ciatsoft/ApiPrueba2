@@ -3,6 +3,7 @@
     ViewBag.Title = "Crud";
 }
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 
 @using (Html.BeginForm("SaveOrUpdateAutomovil", "Automovil", FormMethod.Post, new { enctype = "multipart/form-data", @name = "frmAutomovilCrud", @id = "frmAutomovilCrud" }))
 {
@@ -47,3 +48,5 @@
         </div>
     </div>
 }
+
+<script src="~/Scripts/Automovil/Crud.js"></script>

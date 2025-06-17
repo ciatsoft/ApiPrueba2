@@ -10,7 +10,7 @@ function ValidadorDeDatos() {
             },
             "Autor": {
                 required: true,
-                maxlength: 5
+                maxlength: 20
             }
         },
         messages: {

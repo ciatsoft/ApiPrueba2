@@ -94,6 +94,7 @@
   <ItemGroup>
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\Automovil\Crud.js" />
     <Content Include="Scripts\Comun\Comun.js" />
     <Content Include="Scripts\Home\Autenticacion.js" />
     <Content Include="Scripts\Home\Index.js" />
