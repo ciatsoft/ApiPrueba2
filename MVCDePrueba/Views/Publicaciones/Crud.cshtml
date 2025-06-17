@@ -1,0 +1,32 @@
+﻿@model MVCDePrueba.Models.ObjPublicaciones
+@{
+    ViewBag.Title = "Crud";
+}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+
+@using (Html.BeginForm("SaveOrUpdatePublicaciones", "Publicaciones", FormMethod.Post, new { enctype = "multipart/form-data", @name = "frmPublicacionesCrud", @id = "frmPublicacionesCrud" }))
+{
+    @Html.HiddenFor(x => x.Id)
+    @Html.HiddenFor(x => x.CreatedDt)
+    @Html.HiddenFor(x => x.CreatedBy)
+    @Html.HiddenFor(x => x.UpdatedBy)
+    @Html.HiddenFor(x => x.UpdatedDt)
+    <div class="row">
+        <div class="col-md-4">
+            <label>Titulo:</label>
+            @Html.TextBoxFor(x => x.Titulo, new { @class = "form-control" })
+        </div>
+        <div class="col-md-4">
+            <label>Autor:</label>
+            @Html.TextBoxFor(x => x.Autor, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <input type="submit" value="Guardar" class="btn btn-success" />
+        </div>
+    </div>
+}
+
+<script src="~/Scripts/Publicaciones/Crud.js"></script>
