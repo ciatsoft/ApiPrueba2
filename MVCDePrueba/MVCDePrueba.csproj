@@ -97,6 +97,7 @@
     <Content Include="Scripts\Comun\Comun.js" />
     <Content Include="Scripts\Home\Autenticacion.js" />
     <Content Include="Scripts\Home\Index.js" />
+    <Content Include="Scripts\Publicaciones\Crud.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
